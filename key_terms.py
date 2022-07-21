@@ -3,9 +3,17 @@ from lxml import etree
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
+from nltk import download
 from string import punctuation
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
+
+
+def download_nltk_module():
+    download('punkt')
+    download('wordnet')
+    download('omw-1.4')
+    download('stopwords')
 
 
 def preprocessing(story):
@@ -29,10 +37,16 @@ def vectorization(story):
     return story
 
 
-news = etree.parse('news.xml').getroot()
-text_story = '\n'.join(x[1].text for x in news[0])
-output = {x[0].text: preprocessing(x[1].text) for x in news[0]}
-output = vectorization(output)
-for x, z in output.items():
-    print(x + ':')
-    print(*z[:5])
+def main():
+    news = etree.parse('news.xml').getroot()
+    output = {x[0].text: preprocessing(x[1].text) for x in news[0]}
+    output = vectorization(output)
+    for x, z in output.items():
+        print(x + ':')
+        print(*z[:5])
+
+
+if __name__ == "__main__":
+    download_nltk_module()
+    print('***The most important terms for each paragraph is:***')
+    main()
