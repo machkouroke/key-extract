@@ -8,3 +8,17 @@ Key Term Extraction
 
 ## How use LopShelve ?
 You just have to fill your text in an xml file with a structure similar to the news.xml file and then enter the file path
+```
+<?xml version='1.0' encoding='UTF8'?>
+<data>
+  <corpus>
+    <news>
+      <value name="head">Title</value>
+      <value name="text">
+        <!-- Text -->
+      </value>
+    </news>
+    <!-- And so on -->
+  </corpus>
+</data>
+```
