@@ -6,7 +6,7 @@ Key Term Extraction
 <a href="https://buymeacoffee.com/machkouroke" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 
-## How use LopShelve ?
+## How use Key Term Extraction ?
 You just have to fill your text in an xml file with a structure similar to the news.xml file and then enter the file path
 ```xml
 <?xml version='1.0' encoding='UTF8'?>
